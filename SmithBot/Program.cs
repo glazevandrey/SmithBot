@@ -28,7 +28,7 @@ namespace SmithBot
         public static User Me;
         public static int TotalBalance;
         public static DateTime startTime = DateTime.Now;
-        public static DateTime endTime = new DateTime();
+        public static DateTime endTime;
 
         public static Dictionary<int, double> referralLevels = new Dictionary<int, double>()
         {
