@@ -7,6 +7,7 @@ using SmithBot.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SmithBot.Helpers
 {
@@ -55,7 +56,10 @@ namespace SmithBot.Helpers
             {
                 user = db.BotUsers.FirstOrDefault(m => m.UserId == update.Message.From.Id);
             }
-
+            if (user == null)
+            {
+                return null;
+            }
             var phrases = Helpers.GetPhrases(update.Message.From.Id);
             if (update.Message.Text.ToLower() == phrases.refSystem.ToLower())
             {

@@ -13,7 +13,7 @@ namespace SmithBot.Database
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Db/Clients.db");
+            optionsBuilder.UseMySql(@"server=mysql.j81076941.myjino.ru;user=j81076941;password=448agiAoi;database=j81076941_smithbot;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

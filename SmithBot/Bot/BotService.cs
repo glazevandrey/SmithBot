@@ -39,7 +39,7 @@ namespace SmithBot.Bot
             logger.Info("try get change way");
             var result = type.Get(update);
 
-            if (result.Count != 0)
+            if (result != null && result.Count != 0 )
             {
                 foreach (var action in result)
                 {
