@@ -54,7 +54,7 @@ namespace SmithBot
             Program.config = config;
             Program.validator = new ValidateRequest();
             Program.Me = Program.botClient.GetMeAsync().Result;
-            Program.endTime = DateTime.ParseExact("dd.MM.yyyy HH:mm:ss", config.EndDateTime, CultureInfo.InvariantCulture);
+            Program.endTime = DateTime.ParseExact(config.EndDateTime, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture);
             Program.AdminWallet = config.AdminWallet;
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
