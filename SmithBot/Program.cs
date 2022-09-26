@@ -9,6 +9,7 @@ using SmithBot.Helpers;
 using SmithBot.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace SmithBot
             Program.config = config;
             Program.validator = new ValidateRequest();
             Program.Me = Program.botClient.GetMeAsync().Result;
-            Program.endTime = DateTime.Parse(config.EndDateTime);
+            Program.endTime = DateTime.ParseExact("dd.MM.yyyy HH:mm:ss", config.EndDateTime, CultureInfo.InvariantCulture);
             Program.AdminWallet = config.AdminWallet;
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
